@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.collmall.short_url.mapper.UrlInfoMapper">
+
+    <select id="getUrl" resultType="com.collmall.short_url.model.UrlInfo">
+        SELECT * FROM url_info WHERE short_url=#{shortUrl}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO url_info(url,short_url,is_deleted,c_t,u_t) VALUES (#{url},#{shortUrl},#{isDeleted},#{cT},#{uT})
+    </insert>
+</mapper>
